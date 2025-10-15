@@ -1,5 +1,11 @@
+import Header from '../components/Header'
+
 const Home = () => {
-  return <div>Invitacion Boda Tutis</div>
+  return (
+    <div>
+      <Header />
+    </div>
+  )
 }
 
 export default Home
