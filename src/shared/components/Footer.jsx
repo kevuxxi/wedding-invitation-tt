@@ -1,5 +1,5 @@
 const Footer = () => {
-  return <div>Footer</div>
+  return <Footer>© 2025 — Nuestra Boda 💍</Footer>
 }
 
 export default Footer
