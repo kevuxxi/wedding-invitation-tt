@@ -1,0 +1,30 @@
+:root {
+  /* colores */
+  --color-primary: ;
+  --color-secondary: ;
+  --color-bg: ;
+  --color-text: ;
+
+  /* tipografia */
+  --font-family-primary: ;
+  --font-size-sm: 0.875rem;
+  /* 14px */
+  --font-size-lg: 1.25rem;
+  /* 20px */
+  --font-size-xl: 2rem;
+  /* para títulos grandes */
+  --line-height-base: 1.5;
+
+  /*  espaciado */
+
+  --space-sm: ;
+  --space-md: ;
+  --space-lg: ;
+
+  /* BORDES / RADIOS */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --border-width-base: 1px;
+}
