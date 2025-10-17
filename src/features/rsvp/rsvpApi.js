@@ -1,4 +1,4 @@
-import axiosInstance from '../shared/api/axios'
+import { axiosInstance } from '../../shared/api/axios'
 
 export const rsvpApi = {
   async submitRsvp(data) {
