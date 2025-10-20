@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './shared/pages/Home'
-import Navbar from './shared/components/Navbar'
 import Footer from './shared/components/Footer'
 import Rsvp from './features/rsvp/Rsvp'
 import Dresscode from './features/dresscode/dresscode'
@@ -15,7 +14,6 @@ function App() {
     <>
       <BrowserRouter>
         <Container>
-          <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/rsvp" element={<Rsvp />} />
@@ -25,6 +23,7 @@ function App() {
           </Routes>
           <Footer />
         </Container>
+
         <ToastContainer
           position="top-center"
           autoClose={3000}
