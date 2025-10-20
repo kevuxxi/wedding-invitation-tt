@@ -2,8 +2,16 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import '../../shared/styles/rsvpForm.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { submitRequest } from './rsvpSlice'
+import { toast } from 'react-toastify'
+import { useEffect } from 'react'
 
-const Rsvp = ({ onSubmit, defaultValues, isLoading }) => {
+const Rsvp = ({ defaultValues }) => {
+  const dispatch = useDispatch()
+  const { status, error } = useSelector((state) => state.rsvp)
+  const isLoading = status === 'loading'
+
   const schema = yup.object({
     fullName: yup
       .string()
@@ -26,6 +34,7 @@ const Rsvp = ({ onSubmit, defaultValues, isLoading }) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isValid },
   } = useForm({
     resolver: yupResolver(schema),
@@ -39,8 +48,22 @@ const Rsvp = ({ onSubmit, defaultValues, isLoading }) => {
     mode: 'onTouched',
   })
 
+  const handleOnSubmit = (formValues) => {
+    dispatch(submitRequest(formValues))
+  }
+
+  useEffect(() => {
+    if (status === 'success') {
+      toast.success('¡Confirmación enviada!')
+      reset() // limpia el form (hook de RHF)
+    }
+    if (status === 'error') {
+      toast.error(error || 'Hubo un error al enviar tu confirmación')
+    }
+  }, [status, error])
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="rsvp-form">
+    <form onSubmit={handleSubmit(handleOnSubmit)} className="rsvp-form">
       <div>
         <label htmlFor="fullName">Nombre completo</label>
         <input id="fullName" {...register('fullName')} placeholder="Tu nombre" />
