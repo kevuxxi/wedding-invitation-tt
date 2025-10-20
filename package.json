@@ -41,7 +41,7 @@
     "globals": "^16.4.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.4",
-    "msw": "^2.11.5",
+    "msw": "^2.11.6",
     "prettier": "^3.6.2",
     "react-hook-form": "^7.65.0",
     "react-router-dom": "^7.9.4",
@@ -58,6 +58,11 @@
     ],
     "*.{js,jsx,ts,tsx,css,scss,md,json}": [
       "prettier --write"
+    ]
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
     ]
   }
 }
