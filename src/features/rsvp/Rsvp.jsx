@@ -94,7 +94,7 @@ const Rsvp = ({ defaultValues }) => {
         {errors.message && <p className="error">{errors.message.message}</p>}
       </div>
 
-      <button type="submit" disabled={!isValid || isLoading}>
+      <button type="submit" className={isLoading ? 'loading' : ''} disabled={!isValid || isLoading}>
         {isLoading ? 'Enviando...' : 'Enviar'}
       </button>
     </form>

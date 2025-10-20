@@ -8,6 +8,7 @@ import Dresscode from './features/dresscode/dresscode'
 import Gifts from './features/gifts/Gifts'
 import Location from './features/location/Location'
 import Container from './shared/components/container/Container'
+import { ToastContainer } from 'react-toastify'
 
 function App() {
   return (
@@ -24,6 +25,16 @@ function App() {
           </Routes>
           <Footer />
         </Container>
+        <ToastContainer
+          position="top-center"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          pauseOnHover
+          draggable
+          theme="colored"
+        />
       </BrowserRouter>
     </>
   )
